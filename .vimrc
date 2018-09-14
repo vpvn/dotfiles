@@ -1,0 +1,1 @@
+/home/vpvn/.vim/.vimrc
