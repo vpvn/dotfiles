@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export PATH=/home/vpvn/projects/esp8266/ESP8266/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
+export PATH=/home/vpvn/projects/esp8266/ESP8266/esp-open-sdk/xtensa-lx106-elf/bin:/home/vpvn/projects/air_project:$PATH
 
 mydict() {
   dict -d fd-eng-rus "$1"
