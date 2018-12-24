@@ -37,7 +37,6 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Enable GIT support
 Plugin 'tpope/vim-fugitive'
-
 " Shows signs for added, modified, and removed lines.
 Plugin 'airblade/vim-gitgutter'
 
@@ -50,6 +49,9 @@ Plugin 'jmcantrell/vim-virtualenv'
 
 " vim-auto-save
 Plugin '907th/vim-auto-save'
+
+" Better JSON for VIM
+Plugin 'elzr/vim-json'
 
 " Track the engine.
 Plugin 'SirVer/ultisnips'
@@ -90,6 +92,12 @@ autocmd FileType htmldjango set ts=2
 autocmd FileType htmldjango set sts=2
 autocmd FileType htmldjango set smarttab
 autocmd FileType htmldjango set expandtab
+
+autocmd FileType javascript set sw=2
+autocmd FileType javascript set ts=2
+autocmd FileType javascript set sts=2
+autocmd FileType javascript set smarttab
+autocmd FileType javascript set expandtab
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
