@@ -53,12 +53,20 @@ Plugin '907th/vim-auto-save'
 " Better JSON for VIM
 Plugin 'elzr/vim-json'
 
-" Track the engine.
+" Track the engine
 Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
+" The NERDTree is a file system explorer for the Vim editor
+Plugin 'scrooloose/nerdtree'
+" NERDTree git plugin
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" Adds file type glyphs/icons to popular Vim plugins: NERDTree, vim-airline,
+"     Powerline, Unite, vim-startify and more 
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -175,5 +183,6 @@ let g:auto_save_silent = 1  " do not display the auto-save notification
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<F1>"
 
-
+" The NERDTree
+nmap <C-n> :NERDTreeToggle<CR>
 

@@ -4,10 +4,10 @@
 
 export PATH=/home/vpvn/projects/esp8266/ESP8266/esp-open-sdk/xtensa-lx106-elf/bin:/home/vpvn/projects/air_project:$PATH
 
-mydict() {
-  dict -d fd-eng-rus "$1"
+translate() {
+  sdcv --color -n "$1"
 }
-alias enru=mydict
+alias tr=translate
 
 alias radiodfm="mplayer -cache 2048 -ao alsa:device=hw=1,0 http://92.53.112.250:8100/rr_aac?type=.aac"
 alias radioeuropa="mplayer -cache 2048 http://europa.stav.ru:8010/"
