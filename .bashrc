@@ -44,7 +44,7 @@ alias weather='curl -4 wttr.in/Stavropol?lang=ru'
 # virtualenv wrapper
 export WORKON_HOME='/home/vpvn/.envs'
 VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
-source ~/.local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 
 # If not running interactively, don't do anything
