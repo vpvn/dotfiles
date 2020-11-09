@@ -11,3 +11,5 @@
 [user]
 	email = a@vpvn.ru
 	name = vpvn
+[core]
+	editor = vim

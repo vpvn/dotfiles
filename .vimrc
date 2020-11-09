@@ -1,75 +1,70 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " YouCompleteMe
 "   is a fast, as-you-type, fuzzy-search code completion engine for Vim, 
 "   it provide a Jedi-based completion engine for Python. 
-Plugin 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
-" HTML5 + inline SVG omnicomplete function, indent and syntax for Vim. Based
-" on the default htmlcomplete.vim
-Plugin 'othree/html5.vim'
+" jedi-vim
+"   awesome Python autocompletion with VIM
+Plug 'davidhalter/jedi-vim'
 
 " vim-javascript
 " JavaScript bundle for vim, this bundle provides syntax highlighting and
 " improved indentation.
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 " SimpylFold
-Plugin 'tmhedberg/SimpylFold'
+Plug 'tmhedberg/SimpylFold'
 
 " indentpython
-Plugin 'vim-scripts/indentpython.vim'
+Plug 'vim-scripts/indentpython.vim'
 
 " ALE - Asynchronous Lint Engine
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 
 " Color schemes
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
+Plug 'jnurmine/Zenburn'
+Plug 'altercation/vim-colors-solarized'
 
 " Enable GIT support
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Shows signs for added, modified, and removed lines.
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " Airline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " vim-virtualenv
-Plugin 'jmcantrell/vim-virtualenv'
+Plug 'jmcantrell/vim-virtualenv'
 
 " vim-auto-save
-Plugin '907th/vim-auto-save'
+Plug '907th/vim-auto-save'
 
 " Better JSON for VIM
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json'
 
 " Track the engine
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 
 " The NERDTree is a file system explorer for the Vim editor
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " NERDTree git plugin
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Adds file type glyphs/icons to popular Vim plugins: NERDTree, vim-airline,
 "     Powerline, Unite, vim-startify and more 
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -129,6 +124,7 @@ let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_disable_signature_help = 1
 
 " Enable folding
 set foldmethod=indent
@@ -192,3 +188,5 @@ let g:UltiSnipsExpandTrigger="<F1>"
 " The NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 
+
+hi MatchParen cterm=bold ctermbg=none ctermfg=050
