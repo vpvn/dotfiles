@@ -13,3 +13,6 @@
 	name = vpvn
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
+[credential]
+	helper = store

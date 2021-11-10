@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " jedi-vim
 "   awesome Python autocompletion with VIM
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 
 " vim-javascript
 " JavaScript bundle for vim, this bundle provides syntax highlighting and
@@ -19,6 +19,12 @@ Plug 'pangloss/vim-javascript'
 
 " SimpylFold
 Plug 'tmhedberg/SimpylFold'
+
+" surround.vim
+Plug 'tpope/vim-surround'
+
+" Ack-vim
+Plug 'mileszs/ack.vim'
 
 " indentpython
 Plug 'vim-scripts/indentpython.vim'
@@ -46,7 +52,7 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug '907th/vim-auto-save'
 
 " Better JSON for VIM
-Plug 'elzr/vim-json'
+" Plug 'elzr/vim-json'
 
 " Track the engine
 Plug 'SirVer/ultisnips'
@@ -62,6 +68,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Adds file type glyphs/icons to popular Vim plugins: NERDTree, vim-airline,
 "     Powerline, Unite, vim-startify and more 
 Plug 'ryanoasis/vim-devicons'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'tpope/vim-commentary' 
+
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -108,12 +119,19 @@ autocmd FileType javascript set sts=2
 autocmd FileType javascript set smarttab
 autocmd FileType javascript set expandtab
 
+autocmd FileType vue set sw=2
+autocmd FileType vue set ts=2
+autocmd FileType vue set sts=2
+autocmd FileType vue set smarttab
+autocmd FileType vue set expandtab
+
 "split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-nnoremap <Tab> <C-W><C-W>
+nnoremap <C-J> <C-w>j
+nnoremap <C-K> <C-w>k
+nnoremap <C-L> <C-w>l
+nnoremap <C-H> <C-w>h
+nnoremap <Tab> <C-w>w
+nnoremap <S-Tab> <C-w>W
 
 
 " YouCompleteMe settings
@@ -155,6 +173,7 @@ let g:airline_skip_empty_sections = 1
 
 " Other settings
 " set nu        " number of line
+set hidden    " dont close file, use buffer
 
 " ALE
 "let g:ale_sign_warning = '♪'
@@ -190,3 +209,8 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=050
+
+" Ack-vim
+" Поиск слова под курсором, воскл. знак, чтобы не было автооткрытия файла 
+noremap <F4> :Ack! <cword> --ignore-dir={static,logs,files}<cr> 
+noremap <S-F4> :Ack! --ignore-dir={static,logs,files}
