@@ -26,16 +26,7 @@ return require('packer').startup(function()
     -- local tree_cb = require'nvim-tree.config'.nvim_tree_callback
     use { 'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require'nvim-tree'.setup {
-        -- view = {
-        --     mappings = {
-                -- custom_only = true,
-                -- list = {
-                --     { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
-                -- }
-        --    }
-        -- }
-    } end, }
+    config = function() require'nvim-tree'.setup {} end, }
     -- Навигация внутри файла по классам и функциям
     use 'majutsushi/tagbar'
     -- Замена fzf и ack
@@ -75,7 +66,7 @@ return require('packer').startup(function()
     -----------------------------------------------------------
     -- HTML и CSS
     -----------------------------------------------------------
-    -- Подсвечивает закрывающий и откры. тэг. Если, где-то что-то не закрыто, то не подсвечивает.
+    -- Подсвечивает закрывающий и откр. тэг. Если, где-то что-то не закрыто, то не подсвечивает.
     use 'idanarye/breeze.vim'
     -- Закрывает автоматом html и xml тэги. Пишешь <h1> и он автоматом закроется </h1>
     use 'alvan/vim-closetag'
@@ -91,6 +82,8 @@ return require('packer').startup(function()
     use 'cohama/lexima.vim'
     -- Линтер, работает для всех языков
     use 'dense-analysis/ale'
+    -- Git support
+    use 'airblade/vim-gitgutter'
 
                                 
 end)

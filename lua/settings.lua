@@ -35,6 +35,12 @@ g.ale_lint_on_insert_leave = 0
 g.auto_save = 1  -- enable AutoSave on Vim startup
 g.auto_save_silent = 1  -- do not display the auto-save notification
 
+-- gitgutter setup
+g.gitgutter_sign_added = '∙'
+g.gitgutter_sign_modified = '∙'
+g.gitgutter_sign_removed = '∙'
+g.gitgutter_sign_modified_removed = '∙'
+
 
 -----------------------------------------------------------
 -- Табы и отступы
@@ -131,3 +137,16 @@ augroup end
 --    },
 --},
 --}
+
+local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+local nvtree = require'nvim-tree'
+nvtree.setup {
+        view = {
+            mappings = {
+                custom_only = true,
+                list = {
+                    { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
+                }
+           }
+        }
+}    
